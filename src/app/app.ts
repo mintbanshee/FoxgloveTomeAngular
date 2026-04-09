@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ApiService } from './services/api';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Foxglove Tome';
+
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {
+    this.api.getTest().subscribe(data => {
+      console.log('API Response:', data);
+    })
+  }
 }
