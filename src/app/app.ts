@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+// src/app/app.ts
+
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiService } from './services/api';
+
 
 @Component({
   selector: 'app-root',
@@ -10,14 +12,24 @@ import { ApiService } from './services/api';
   styleUrl: './app.css'
 })
 
-export class AppComponent implements OnInit {
-  title = 'Foxglove Tome';
-
-  constructor(private api: ApiService) {}
-
-  ngOnInit() {
-    this.api.getTest().subscribe(data => {
-      console.log('API Response:', data);
-    })
-  }
+export class AppComponent {
+  title = signal('Foxglove Tome');
 }
+
+
+
+
+
+/**~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+!          Removed Snippets           !  
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+** this was used to display the API response in the console to verify
+        the connection status during initial setup 
+
+      this.api.getTest().subscribe(data => {
+        console.log('API Response:', data);
+      })
+
+
+*/ 

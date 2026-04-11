@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css'; 
+
+:root {
+    --background: #fdfbf7;
+    --navbackground: #2e004f;
+    --accentGlow: #9d81a5;
+    --text: #0d1b0e;
+    --highlight: #a2cbb4;
+    --contrast: #4a5d4e;
+    --detail: #2e4033;
+    --callToAct: #6b4f7d;
+    --hover: #e9ecef;
+    --border: #b2babb;
+    --radius: 20px;
+    --scrim: rgba(255, 255, 255, 0.8);
+    --scrim2: rgba(0, 0, 0, 0.6);
+}
+
+.montecarlo-regular {
+    font-family: "MonteCarlo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+  background: var(--hover);
+}
+
+.summaryCard {
+  background: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--detail);
+  box-shadow: 3px 3px 6px rgba(16, 36, 19, 0.4) !important;
+  font-size: 0.8rem;
+}
+.flourish {
+  color: var(--callToAct);
+}
+.entryCard {
+  background: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--contrast);
+  box-shadow: 1px 1px 3px rgba(16, 36, 19, 0.4) !important;
+}
+.description {
+  font-size: 0.8rem !important; 
+}
+.date {
+  font-size: 0.6rem !important;
+}
+
+.moodText {
+  border-top: 1px solid var(--callToAct) !important;
+  font-size: 0.9rem !important;
+}
+.moodRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.moodIcon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+}

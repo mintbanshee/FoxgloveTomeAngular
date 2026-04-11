@@ -1,0 +1,61 @@
+
+<div class="container py-3">
+
+  <!-- Header -->
+  <h1 class="montecarlo-regular mb-2 fw-bold">My Dashboard</h1>
+  <p class="text-muted mb-3">Welcome back -_username goes here_-!</p>
+
+  <!-- Weekly Mood Card (placeholder for now) -->
+  <div class="summaryCard mb-4 py-3 shadow-sm">
+    <div class="card-body text-center">
+      <h4 class="montecarlo-regular card-title mb-2">Weekly Mood Summary</h4>
+      <p class="flourish mb-2"><sub>⟡</sub>☾<sup>⟡</sup></p>
+      <p class="mb-2">This week, you have been feeling mostly Excited.</p>
+      <em>"Your growth is something to be proud of."</em>
+    </div>
+  </div>
+
+  <!-- Journal Section -->
+  <h3 class="montecarlo-regular mb-3 fw-bold">My Journal</h3>
+
+  @if (entries.length > 0) {
+    @for (entry of entries; track entry.entry_id) {
+
+      <div class="entryCard px-2 py-1 mb-3 shadow-sm">
+        <div class="card-body">
+
+          <small class="date text-muted fst-italic d-block mb-2">
+            {{ entry.date_created }}
+          </small>
+
+          <h5 class="title montecarlo-regular card-title mb-2">
+            {{ entry.title }}
+          </h5>
+
+          <p class="moodRow mb-1 text-muted">
+            <span class="moodText">{{ entry.mood }}</span>
+            <img
+              [src]="getMoodIcon(entry.mood_category)"
+              [alt]="entry.mood_category"
+              class="moodIcon"/>
+          </p>
+
+          <p class="description text-muted fs-6 fst-italic text-truncate">
+            {{ entry.content }}
+          </p>
+
+          
+        </div>
+      </div>
+
+    }
+
+  } @else {
+
+    <p class="text-muted">
+      You have no journal entries yet. Start by creating your first entry!
+    </p>
+
+  }
+
+</div>
